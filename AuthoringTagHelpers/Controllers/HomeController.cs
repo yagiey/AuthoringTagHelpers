@@ -23,6 +23,12 @@ namespace AuthoringTagHelpers.Controllers
             return View();
         }
 
+        public IActionResult Contact()
+        {
+            ViewData["Title"] = nameof(Contact);
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
