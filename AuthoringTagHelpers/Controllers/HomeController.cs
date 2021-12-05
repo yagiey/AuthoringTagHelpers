@@ -13,9 +13,17 @@ namespace AuthoringTagHelpers.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(bool approved = false)
         {
-            return View();
+            WebsiteContext model = new()
+            {
+                Approved = approved,
+                CopyrightYear = 2015,
+                Version = new Version(1, 3, 3, 7),
+                TagsToShow = 20,
+            };
+
+            return View(model: model);
         }
 
         public IActionResult Privacy()
